@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="39503" id="com.moodle.moodlemobile" ios-CFBundleVersion="3.9.5.3" version="3.9.5" versionCode="39503" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Moodle</name>
-    <description>Moodle official app</description>
-    <author email="mobile@moodle.com" href="http://moodle.com">Moodle Mobile team</author>
-    <content src="index.html" />
+<widget android-versionCode="1" id="isda.exentriq.com" ios-CFBundleVersion="2.0.0" version="2.0.0.1" versionCode="1" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>ISDA School</name>
+    <description>ISDA School official app</description>
+    <author email="info@exentriq.com" href="http://www.exentriq.com">Exentriq Ltd</author>
+    <content original-src="index.html" src="http://localhost:8100" />
     <access origin="*" />
     <access launch-external="yes" origin="tel:*" />
     <access launch-external="yes" origin="mailto:*" />
@@ -236,6 +236,34 @@
         </config-file>
     </platform>
     <platform name="ios">
+        <icon height="180" src="resources/ios/icons/icon-60@3x.png" width="180" />
+        <icon height="120" src="resources/ios/icons/icon-60@2x.png" width="120" />
+        <icon height="76" src="resources/ios/icons/icon-76.png" width="76" />
+        <icon height="152" src="resources/ios/icons/icon-76@2x.png" width="152" />
+        <icon height="40" src="resources/ios/icons/icon-40.png" width="40" />
+        <icon height="80" src="resources/ios/icons/icon-40@2x.png" width="80" />
+        <icon height="57" src="resources/ios/icons/icon.png" width="57" />
+        <icon height="114" src="resources/ios/icons/icon@2x.png" width="114" />
+        <icon height="72" src="resources/ios/icons/icon-72.png" width="72" />
+        <icon height="144" src="resources/ios/icons/icon-72@2x.png" width="144" />
+        <icon height="29" src="resources/ios/icons/icon-29.png" width="29" />
+        <icon height="58" src="resources/ios/icons/icon-29@2x.png" width="58" />
+        <icon height="87" src="resources/ios/icons/icon-29@3x.png" width="87" />
+        <icon height="50" src="resources/ios/icons/icon-50.png" width="50" />
+        <icon height="100" src="resources/ios/icons/icon-50@2x.png" width="100" />
+        <icon height="167" src="resources/ios/icons/icon-83.5@2x.png" width="167" />
+        <icon height="20" src="resources/ios/icons/icon-20.png" width="20" />
+        <icon height="60" src="resources/ios/icons/icon-20@3x.png" width="60" />
+        <icon height="24" src="resources/ios/icons/icon-24.png" width="24" />
+        <icon height="48" src="resources/ios/icons/icon-24@2x.png" width="48" />
+        <icon height="55" src="resources/ios/icons/icon-27.5@2x.png" width="55" />
+        <icon height="88" src="resources/ios/icons/icon-44@2x.png" width="88" />
+        <icon height="172" src="resources/ios/icons/icon-86@2x.png" width="172" />
+        <icon height="196" src="resources/ios/icons/icon-98@2x.png" width="196" />
+        <icon height="216" src="resources/ios/icons/icon-108@2x.png" width="216" />
+        <icon height="1024" src="resources/ios/icons/icon-1024.png" width="1024" />
+        <splash src="resources/ios/splash/Default@2x_universal_anyany.jpg" />
+        <splash src="resources/ios/splash/Default@3x_universal_anyany.jpg" />
         <resource-file src="GoogleService-Info.plist" />
         <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
             <string>We need your location so you can attach it as part of your submissions.</string>
@@ -256,7 +284,7 @@
             <true />
         </edit-config>
         <edit-config file="*-Info.plist" mode="merge" target="CFBundleShortVersionString">
-            <string>3.9.5</string>
+            <string>2.0.0</string>
         </edit-config>
         <edit-config file="*-Info.plist" mode="overwrite" target="CFBundleLocalizations">
             <array>
@@ -668,4 +696,5 @@
             </array>
         </config-file>
     </platform>
+    <allow-navigation href="http://localhost:8100" sessionid="c7191e05" />
 </widget>

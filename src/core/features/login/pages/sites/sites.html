@@ -6,7 +6,7 @@
 
         <h1>{{ 'core.settings.sites' | translate }}</h1>
 
-        <ion-buttons slot="end">
+        <!--ion-buttons slot="end">
             <ion-button fill="clear" *ngIf="sites && sites.length > 0" (click)="toggleDelete()"
                 [attr.aria-label]="'core.delete' | translate">
                 <ion-icon slot="icon-only" name="fas-pen" aria-hidden="true"></ion-icon>
@@ -14,7 +14,7 @@
             <ion-button (click)="openSettings()" [attr.aria-label]="'core.settings.appsettings' | translate">
                 <ion-icon slot="icon-only" name="fas-cog" aria-hidden="true"></ion-icon>
             </ion-button>
-        </ion-buttons>
+        </ion-buttons-->
     </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -39,10 +39,10 @@
             </ion-button>
         </ion-item>
     </ion-list>
-    <ion-fab slot="fixed" core-fab vertical="bottom" horizontal="end">
+    <!--ion-fab slot="fixed" core-fab vertical="bottom" horizontal="end">
         <ion-fab-button (click)="add()" [attr.aria-label]="'core.add' | translate">
             <ion-icon name="fas-plus" aria-hidden="true"></ion-icon>
             <span class="sr-only">{{ 'core.add' | translate }}</span>
         </ion-fab-button>
-    </ion-fab>
+    </ion-fab-->
 </ion-content>
