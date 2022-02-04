@@ -3,3 +3,9 @@
  * ----------------------------------------------------------------------------
  * Place here all custom app variables.
  */
+ :root {
+   ion-item.container-styling-exeq {
+      --ion-safe-area-right: 0;
+      --inner-border-width: 0;
+  }
+}
