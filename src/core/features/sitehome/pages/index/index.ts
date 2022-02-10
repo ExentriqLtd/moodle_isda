@@ -117,7 +117,7 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 					    console.log(data);
 					    
 					    if(!data.valid){
-						
+							CoreDomUtils.showErrorModal('Course code not valid');
 							var invcourse = document.querySelector<HTMLElement>(".invalid-course");
 							if(invcourse != null)
 								invcourse.style.display = "block";
@@ -177,6 +177,7 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 					    
 					    if(!data.valid){
 							//console.log("show bad teacher alert");
+							CoreDomUtils.showErrorModal('Teacher code not valid');
 							var invteacher = document.querySelector<HTMLElement>(".invalid-teacher");
 							if(invteacher != null)
 								invteacher.style.display = "block";
@@ -213,6 +214,7 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
                                         });
 												
 									}else{
+										CoreDomUtils.showErrorModal('Sorry, we encountered a problem during enrolment, please try again');
 										var invteacher = document.querySelector<HTMLElement>(".invalid-teacher");
 										if(invteacher != null)
 											invteacher.style.display = "block";
