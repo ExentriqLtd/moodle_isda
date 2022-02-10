@@ -3,7 +3,7 @@
     <name>ISDA School</name>
     <description>ISDA School official app</description>
     <author email="info@exentriq.com" href="http://www.exentriq.com">Exentriq Ltd</author>
-    <content original-src="index.html" src="http://localhost:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <access launch-external="yes" origin="tel:*" />
     <access launch-external="yes" origin="mailto:*" />
@@ -262,8 +262,8 @@
         <icon height="196" src="resources/ios/icons/icon-98@2x.png" width="196" />
         <icon height="216" src="resources/ios/icons/icon-108@2x.png" width="216" />
         <icon height="1024" src="resources/ios/icons/icon-1024.png" width="1024" />
-        <splash src="resources/ios/splash/Default@2x_universal_anyany.jpg" />
-        <splash src="resources/ios/splash/Default@3x_universal_anyany.jpg" />
+        <splash src="resources/ios/splash/Default@2x~universal~anyany.jpg" />
+        <splash src="resources/ios/splash/Default@3x~universal~anyany.jpg" />
         <resource-file src="GoogleService-Info.plist" />
         <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
             <string>We need your location so you can attach it as part of your submissions.</string>
@@ -696,5 +696,4 @@
             </array>
         </config-file>
     </platform>
-    <allow-navigation href="http://localhost:8100" sessionid="c7191e05" />
 </widget>
