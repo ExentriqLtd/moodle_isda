@@ -248,7 +248,36 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
                                             
                                             CoreCourseHelper.openCourse(result.course);
                                             CoreUtils.ignoreErrors(CoreCourses.invalidateUserCourses());
+                                            
+                                            window["courseId"] = null;
+											window["couponId"] = null;
+													
+											var step1 = document.querySelector<HTMLElement>("#step1");
+											if(step1 != null)
+												step1.style.display = "block";
+											
+											var step2 = document.querySelector<HTMLElement>("#step2");
+											if(step2 != null)
+												step2.style.display = "none";
+												
+											var codeInput = document.querySelector<HTMLInputElement>("#course_code");
+											if(codeInput != null)
+												codeInput.value = "";
+												
+											var teachercode = document.querySelector<HTMLInputElement>(".teacher_code");
+											if(teachercode != null)
+											 	teachercode.value = "";
+											 	
+											var invcourse = document.querySelector<HTMLElement>(".invalid-course");
+											if(invcourse != null)
+												invcourse.style.display = "none";
+												
+											var invteacher = document.querySelector<HTMLElement>(".invalid-teacher");
+											if(invteacher != null)
+												invteacher.style.display = "none";
                                         });
+                                        
+                                        
 												
 									}else{
 										CoreDomUtils.showErrorModal('Sorry, we encountered a problem during enrolment, please try again');
