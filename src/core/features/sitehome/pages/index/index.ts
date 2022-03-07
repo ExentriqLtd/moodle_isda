@@ -91,6 +91,10 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
             
             setTimeout(function(){
 	        
+	        /*var mobileareas = document.querySelector<HTMLElement>(".mobile-only-area");
+            if(mobileareas != null){
+	            mobileareas.style.display = "block";
+	            }*/
 	        
 	        var resetcode = document.querySelector<HTMLElement>(".change-code");
             if(resetcode != null){
@@ -140,7 +144,7 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 				if(codeInput != null)
 					code = codeInput.value;
 				
-				var url = "https://art001exe.exentriq.com/93489/isValidCode?code=" + code.replace("-","");
+				var url = "https://art001exe.exentriq.com/93489/isValidCode?code=" + code.replace("-","") + "&rand=" + new Date().getTime();
 				
 				fetch(url)
 					  .then(response => response.json())
@@ -199,7 +203,7 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 				if(teachercode != null)
 				 	code = teachercode.value;
 				
-				var url = "https://art001exe.exentriq.com/93489/isValidTeacher?code=" + code + "&course=" + window["courseId"];
+				var url = "https://art001exe.exentriq.com/93489/isValidTeacher?code=" + code + "&course=" + window["courseId"] + "&rand=" + new Date().getTime();
 				
 				fetch(url)
 					  .then(response => response.json())
@@ -232,7 +236,7 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 								
 							var couponId = window["couponId"];
 							
-							var url2 = "https://art001exe.exentriq.com/93489/enrol?teacherId=" + teacherId + "&teacherName=" + teacherName + "&courseId=" + window["courseId"] + "&studentId=" + studentId + "&couponId=" + couponId + "&courseCode=" + courseCode;
+							var url2 = "https://art001exe.exentriq.com/93489/enrol?teacherId=" + teacherId + "&teacherName=" + teacherName + "&courseId=" + window["courseId"] + "&studentId=" + studentId + "&couponId=" + couponId + "&courseCode=" + courseCode + "&rand=" + new Date().getTime();
 							
 							fetch(url2)
 								.then(response => response.json())
