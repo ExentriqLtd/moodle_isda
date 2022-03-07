@@ -140,7 +140,7 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 				if(codeInput != null)
 					code = codeInput.value;
 				
-				var url = "https://art001exe.exentriq.com/93489/isValidCode?code=" + code;
+				var url = "https://art001exe.exentriq.com/93489/isValidCode?code=" + code.replace("-","");
 				
 				fetch(url)
 					  .then(response => response.json())
@@ -223,7 +223,7 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 				
 							var codeInput = document.querySelector<HTMLInputElement>("#course_code");
 							if(codeInput != null)
-								courseCode = codeInput.value;
+								courseCode = codeInput.value.replace("-","");
 							
 							var studentId = "";
 							var verify_code_nr = document.querySelector<HTMLInputElement>(".verify_code_nr");
