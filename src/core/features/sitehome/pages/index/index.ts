@@ -91,10 +91,106 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
             
             setTimeout(function(){
 	        
-	        /*var mobileareas = document.querySelector<HTMLElement>(".mobile-only-area");
+	        var mobileareas = document.querySelector<HTMLElement>(".mobile-only-area");
             if(mobileareas != null){
 	            mobileareas.style.display = "block";
-	            }*/
+	            }
+	        
+	        
+	        var viewbadges = document.querySelector<HTMLElement>(".view-badges");
+            if(viewbadges != null){
+				viewbadges.addEventListener("click", (e) => {
+					
+					var firstname = "";
+					if(viewbadges != null && viewbadges.attributes["data-firstname"] != null){
+						firstname = viewbadges.attributes["data-firstname"].value;
+					}
+					
+					var lastname = "";
+					if(viewbadges != null && viewbadges.attributes["data-lastname"] != null){
+						lastname = viewbadges.attributes["data-lastname"].value;
+					}
+					
+					var parseddate = "";
+					if(viewbadges != null && viewbadges.attributes["data-bd"] != null){
+						var bdate = viewbadges.attributes["data-bd"].value;
+						try{
+							var d = new Date(bdate);
+							var m = d.getMonth();
+							m++;
+							var month = m+"";
+							if(m < 10){
+								month = "0" + m;
+							}
+							
+							var g = d.getDate();
+							var day = g+"";
+							if(g < 10){
+								day = "0" + g;
+							}
+							parseddate = d.getFullYear() +"" + month  + "" + day; 
+							
+						}catch(e){
+							console.log(e);
+						}
+					}
+					
+					var url = "https://art001exe.exentriq.com/93489/getCert?rand=" + new Date().getTime();
+					var payload = {
+						"name": firstname,
+						"surname": lastname,
+						"birthDate":parseddate
+					}
+				
+				fetch(url, {
+					    method: 'POST',
+					    headers: {
+					      'Accept': 'application/json',
+					      'Content-Type': 'application/json'
+					    },
+					    body: JSON.stringify(payload)
+					  })
+					  .then(response => response.json())
+					  .then(data => {
+					    // Handle data
+					    
+					    console.log(data);
+					    
+					    if(data && data.length > 0){
+				        	
+				        	var br2 = document.querySelector<HTMLElement>(".mybadges_result");
+					        if(br2 != null){
+						       
+						       var html = "";
+						       for(var i=0; i < data.length; i++){
+							        
+							        html += "<div class='single_badge' style='margin-top: 10px;padding-top: 10px;border-top: 1px solid #ccc;'><div class='badge_img'><img src='" + data[i].Image + "'></div><div class='badge_desc' style='display:none'>" + data[i].Certification + "</div></div>";
+							        
+							        
+						        }
+						        
+						         br2.innerHTML = html;
+					        
+					        }
+					        
+				        }else{
+					        var br = document.querySelector<HTMLElement>(".mybadges_result");
+					        if(br != null){
+						        br.innerHTML = "-";
+						    }
+						    
+						    var br2 = document.querySelector<HTMLElement>(".no-mybadges_result");
+					        if(br2 != null){
+						        br2.style.display = "block";
+						    }
+						    
+				        }
+					
+					})
+					
+				})
+					
+			}
 	        
 	        var resetcode = document.querySelector<HTMLElement>(".change-code");
             if(resetcode != null){
