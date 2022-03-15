@@ -98,14 +98,6 @@
         </ion-list>
     </ng-container>
 
-    <ng-container *ngIf="showScanQR && !hasSites && !enteredSiteUrl">
-        <div class="ion-text-center ion-padding ion-margin-top">{{ 'core.login.or' | translate }}</div>
-        <ion-button expand="block" color="light" class="ion-margin" lines="none" (click)="showInstructionsAndScanQR()"
-            aria-haspopup="dialog">
-            <ion-icon slot="start" name="fas-qrcode" aria-hidden="true"></ion-icon>
-            <ion-label>{{ 'core.scanqr' | translate }}</ion-label>
-        </ion-button>
-    </ng-container>
 
     <!-- Help. -->
     <ion-button
@@ -119,6 +111,7 @@
         <ion-label>{{ 'core.needhelp' | translate }}</ion-label>
     </ion-button>
 </ion-content>
+
 
 <!-- Template site selector. -->
 <ng-template #sitelisting let-site="site">
