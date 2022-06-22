@@ -248,6 +248,8 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 								
 							return;
 						}else{
+							window["dataTeacher"] = data;
+				
 							var teacherId = data.id;
 							var teacherName = encodeURIComponent(data.name);
 							var courseCode = "";
@@ -263,9 +265,68 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 								
 							var couponId = window["couponId"];
 							
-							var url2 = "https://art001exe.exentriq.com/93489/enrol?teacherId=" + teacherId + "&teacherName=" + teacherName + "&courseId=" + window["courseId"] + "&studentId=" + studentId + "&couponId=" + couponId + "&courseCode=" + courseCode + "&rand=" + new Date().getTime();
+							var courseTeacherName = document.querySelector<HTMLInputElement>("#course-teacher-name");
+							if(courseTeacherName != null)
+								courseTeacherName.innerHTML = data.name;
+								
+							var courseTeacher = document.querySelector<HTMLInputElement>("#course-teacher");
+							if(courseTeacher != null)
+								courseTeacher.style.display = "block";
+								
+							var teacherCodeBtn = document.querySelector<HTMLInputElement>("#teacher_code_btn");
+							if(teacherCodeBtn != null)
+								teacherCodeBtn.style.display = "none";
+								
+							var teacherCodeField = document.querySelector<HTMLInputElement>("#teacher_code_field");
+							if(teacherCodeField != null)
+								teacherCodeField.style.display = "none";
+								
+							var isdaTitle = document.querySelector<HTMLElement>(".isdaTitle");
+							if(isdaTitle != null)
+								isdaTitle.style.display = "none";
+								
 							
-							fetch(url2)
+							
+							
+						}
+					    
+					  }).catch(error => {
+					    // Handle error
+					  });
+					
+					
+					
+					//location.href = "/user/begin.php?course=" + data.id + "&cid=" + data.coupon;
+					
+				//})
+				e.preventDefault();
+				e.stopPropagation();
+				return false;
+			})
+			
+			
+			var confirm_code_nr = document.querySelector<HTMLElement>(".confirm_code_nr");
+            if(confirm_code_nr != null)
+				confirm_code_nr.addEventListener("click", (e) => {
+				
+				
+				var teacherId = window["dataTeacher"].id;
+				var teacherName = encodeURIComponent(window["dataTeacher"].name);
+				var codeInput = document.querySelector<HTMLInputElement>("#course_code");
+				var courseCode = "";
+				if(codeInput != null)
+					courseCode = codeInput.value;
+				
+				var studentId = "";
+				var verify_code_nr = document.querySelector<HTMLElement>(".verify_code_nr");
+				if(verify_code_nr != null)
+            		studentId = verify_code_nr.attributes["data-id"].value
+				
+				var couponId = window["couponId"];
+				
+				var url2 = "https://art001exe.exentriq.com/93489/enrol?teacherId=" + teacherId + "&teacherName=" + teacherName + "&courseId=" + window["courseId"] + "&studentId=" + studentId + "&couponId=" + couponId + "&courseCode=" + courseCode + "&rand=" + new Date().getTime();
+							
+				fetch(url2)
 								.then(response => response.json())
 								.then(data2 => {
 									
@@ -317,22 +378,15 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 								}).catch(error => {
 							    // Handle error
 							  });
-							
-						}
-					    
-					  }).catch(error => {
-					    // Handle error
-					  });
 					
+				
+				
 					
-					
-					//location.href = "/user/begin.php?course=" + data.id + "&cid=" + data.coupon;
-					
-				//})
 				e.preventDefault();
 				e.stopPropagation();
 				return false;
 			})
+			
 			
 			
 			},2000)
