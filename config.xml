@@ -3,7 +3,7 @@
     <name>ISDA E-Learning</name>
     <description>ISDA E-Learning official app</description>
     <author email="info@exentriq.com" href="http://www.exentriq.com">Exentriq Ltd</author>
-    <content original-src="index.html" src="http://localhost:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <access launch-external="yes" origin="tel:*" />
     <access launch-external="yes" origin="mailto:*" />
@@ -727,5 +727,4 @@
             </array>
         </config-file>
     </platform>
-    <allow-navigation href="http://localhost:8100" sessionid="638dc857" />
 </widget>
