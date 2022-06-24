@@ -153,6 +153,22 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 					var invteacher = document.querySelector<HTMLElement>(".invalid-teacher");
 					if(invteacher != null)
 						invteacher.style.display = "none";
+						
+					var courseTeacher = document.querySelector<HTMLInputElement>("#course-teacher");
+					if(courseTeacher != null)
+						courseTeacher.style.display = "none";
+						
+					var teacherCodeBtn = document.querySelector<HTMLInputElement>("#teacher_code_btn");
+					if(teacherCodeBtn != null)
+						teacherCodeBtn.style.display = "block";
+						
+					var teacherCodeField = document.querySelector<HTMLInputElement>("#teacher_code_field");
+					if(teacherCodeField != null)
+						teacherCodeField.style.display = "block";
+						
+					var isdaTitle = document.querySelector<HTMLElement>("#isdaTitle");
+					if(isdaTitle != null)
+						isdaTitle.style.display = "block";
 				})
 			}
 	        
@@ -198,6 +214,10 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 							
 							window["courseId"] = data.id;
 							window["couponId"] = data.coupon;
+							
+							var courseLabel = document.querySelector<HTMLElement>("#course-label-name");
+							if(courseLabel != null)
+								courseLabel.innerHTML = data.title;
 						}
 					    
 					  }).catch(error => {
@@ -281,7 +301,7 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 							if(teacherCodeField != null)
 								teacherCodeField.style.display = "none";
 								
-							var isdaTitle = document.querySelector<HTMLElement>(".isdaTitle");
+							var isdaTitle = document.querySelector<HTMLElement>("#isdaTitle");
 							if(isdaTitle != null)
 								isdaTitle.style.display = "none";
 								
