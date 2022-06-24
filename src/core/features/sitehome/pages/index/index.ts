@@ -217,7 +217,7 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 							
 							var courseLabel = document.querySelector<HTMLElement>("#course-label-name");
 							if(courseLabel != null)
-								courseLabel.innerHTML(data.title);
+								courseLabel.innerHTML = data.title;
 						}
 					    
 					  }).catch(error => {
