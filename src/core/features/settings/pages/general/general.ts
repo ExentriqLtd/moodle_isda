@@ -23,6 +23,8 @@ import { CoreSettingsHelper, CoreColorScheme, CoreZoomLevel } from '../../servic
 import { CoreApp } from '@services/app';
 import { CoreIframeUtils } from '@services/utils/iframe';
 import { Diagnostic } from '@singletons';
+import { CoreSites } from '@services/sites';
+import { CoreSite } from '@classes/site';
 
 /**
  * Page that displays the general settings.
@@ -111,7 +113,30 @@ export class CoreSettingsGeneralPage {
     languageChanged(): void {
         CoreLang.changeCurrentLanguage(this.selectedLanguage).finally(() => {
             CoreEvents.trigger(CoreEvents.LANGUAGE_CHANGED, this.selectedLanguage);
-        });
+
+            /* Change Language*/
+            const currentSite = CoreSites.getCurrentSite();
+            const token = currentSite?.getToken();
+            const payload = {
+                token,
+                lang: this.selectedLanguage,
+                userId: currentSite?.getUserId(),
+            };
+            const url = 'https://art001exe.exentriq.com/93489/updateLanguage';
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(payload),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    currentSite?.invalidateWsCache();
+                    console.log(data);
+                });
+            });
     }
 
     /**
