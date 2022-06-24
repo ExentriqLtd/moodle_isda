@@ -23,7 +23,7 @@ import { CoreNoTagsPipe } from './no-tags';
 import { CoreSecondsToHMSPipe } from './seconds-to-hms';
 import { CoreTimeAgoPipe } from './time-ago';
 import { CoreToLocaleStringPipe } from './to-locale-string';
-
+import { FilterMenuItemPipe } from './filter-menu-item';
 @NgModule({
     declarations: [
         CoreBytesToSizePipe,
@@ -35,6 +35,7 @@ import { CoreToLocaleStringPipe } from './to-locale-string';
         CoreSecondsToHMSPipe,
         CoreTimeAgoPipe,
         CoreToLocaleStringPipe,
+        FilterMenuItemPipe,
     ],
     exports: [
         CoreBytesToSizePipe,
@@ -46,6 +47,7 @@ import { CoreToLocaleStringPipe } from './to-locale-string';
         CoreSecondsToHMSPipe,
         CoreTimeAgoPipe,
         CoreToLocaleStringPipe,
+        FilterMenuItemPipe
     ],
 })
 export class CorePipesModule {}
