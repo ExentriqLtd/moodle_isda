@@ -96,6 +96,16 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
             if(mobileareas != null){
 	            mobileareas.style.display = "block";
 	            }
+	            
+	            var pleaseUpgrade = document.querySelector<HTMLElement>("#pleaseUpgrade");
+				if(pleaseUpgrade != null){
+	            	pleaseUpgrade.style.display = "none";
+	            }
+	            
+	            var showAfterUpgrade = document.querySelector<HTMLElement>("#showAfterUpgrade");
+				if(showAfterUpgrade != null){
+	            	showAfterUpgrade.style.display = "block";
+	            }
 	        
 	        
 	        async function showBadges(){
