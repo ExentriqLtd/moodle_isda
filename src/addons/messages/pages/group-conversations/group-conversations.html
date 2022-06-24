@@ -70,7 +70,7 @@
                 </ion-item>
 
                 <!-- Group conversations. -->
-                <ion-item
+                <!--ion-item
                     button
                     class="divider ion-text-wrap"
                     (click)="toggle(group)"
@@ -88,7 +88,7 @@
                     <span *ngIf="group.unread" class="sr-only">
                         {{ 'addon.messages.unreadconversations' | translate:{$a: group.unread} }}
                     </span>
-                </ion-item>
+                </ion-item-->
                 <div [hidden]="!group.conversations || !group.expanded || group.loading" #grouplist
                     id="addon-messages-groupconversations-group">
                     <ng-container *ngTemplateOutlet="conversationsTemplate; context: {conversations: group.conversations}">
