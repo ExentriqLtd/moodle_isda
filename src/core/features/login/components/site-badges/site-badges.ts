@@ -34,6 +34,7 @@ export class CoreLoginSiteBadgesComponent {
     canScanQR: boolean;
 
     constructor() {
+	    var noBadgeMsg = Translate.instant('home.nobadges');
 		var firstname = "";
 		 var viewbadges = document.querySelector<HTMLElement>(".view-badges");
 					if(viewbadges != null && viewbadges.attributes["data-firstname"] != null){
@@ -112,7 +113,7 @@ export class CoreLoginSiteBadgesComponent {
 				        }else{
 					        var br = document.querySelector<HTMLElement>(".mybadges_result2");
 					        if(br != null){
-						        br.innerHTML = "-";
+						        br.innerHTML = "<div class='noBadgeMsg' style='padding:20px'>" +  noBadgeMsg + "</div>";
 						    }
 						    
 						    var br2 = document.querySelector<HTMLElement>(".no-mybadges_result");

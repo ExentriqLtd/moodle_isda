@@ -2066,5 +2066,8 @@
     "core.years": "anni",
     "core.yes": "Sì",
     "core.youreoffline": "Sei offline",
-    "core.youreonline": "Sei di nuovo online"
+    "core.youreonline": "Sei di nuovo online",
+    "home.nobadges": "In questa pagina vedi i tuoi brevetti ISDA. Se non ne vedi qualcuno, contatta il tuo istruttore oppure scrivi a info@isdaworld.com",
+    "home.codenotvalid": "Codice non valido",
+    "home.teachernotvalid": "Codice istruttore non valido"
 }

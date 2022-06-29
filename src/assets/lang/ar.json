@@ -2254,5 +2254,8 @@
     "core.years": "سنوات",
     "core.yes": "نعم",
     "core.youreoffline": "أنت غير متصل",
-    "core.youreonline": "عُدتَ متصلاً"
+    "core.youreonline": "عُدتَ متصلاً",
+    "home.nobadges": "In this page your ISDA certification are listed. If you think some of them are missing, please contact your instructor or write to info@isdaworld.com",
+    "home.codenotvalid": "Course code not valid",
+    "home.teachernotvalid": "Instructor code not valid"
 }

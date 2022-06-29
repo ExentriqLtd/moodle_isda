@@ -2255,5 +2255,8 @@
     "core.years": "años",
     "core.yes": "Sí",
     "core.youreoffline": "Está desconectado",
-    "core.youreonline": "Conectado de nuevo"
+    "core.youreonline": "Conectado de nuevo",
+    "home.nobadges": "In this page your ISDA certification are listed. If you think some of them are missing, please contact your instructor or write to info@isdaworld.com",
+    "home.codenotvalid": "Course code not valid",
+    "home.teachernotvalid": "Instructor code not valid"
 }

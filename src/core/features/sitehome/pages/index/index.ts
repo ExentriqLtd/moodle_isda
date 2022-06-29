@@ -30,7 +30,7 @@ import { CoreCourseModulePrefetchDelegate } from '@features/course/services/modu
 import { CoreNavigator } from '@services/navigator';
 import { CoreUtils } from '@services/utils/utils';
 import { CoreLoginSiteBadgesComponent } from '@features/login/components/site-badges/site-badges';
-
+import { Translate } from '@singletons';
 /**
  * Page that displays site home index.
  */
@@ -64,6 +64,9 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
      * Page being initialized.
      */
     ngOnInit(): void {
+	    var codenotvalid = Translate.instant('home.codenotvalid');
+	    var teachernotvalid = Translate.instant('home.teachernotvalid');
+	    
         this.searchEnabled = !CoreCourses.isSearchCoursesDisabledInSite();
         this.downloadCourseEnabled = !CoreCourses.isDownloadCourseDisabledInSite();
         this.downloadCoursesEnabled = !CoreCourses.isDownloadCoursesDisabledInSite();
@@ -207,7 +210,7 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 					    console.log(data);
 					    
 					    if(!data.valid){
-							CoreDomUtils.showErrorModal('Course code not valid');
+							CoreDomUtils.showErrorModal(codenotvalid);//'Course code not valid');
 							var invcourse = document.querySelector<HTMLElement>(".invalid-course");
 							if(invcourse != null)
 								invcourse.style.display = "block";
@@ -271,7 +274,7 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 					    
 					    if(!data.valid){
 							//console.log("show bad teacher alert");
-							CoreDomUtils.showErrorModal('Teacher code not valid');
+							CoreDomUtils.showErrorModal(teachernotvalid);
 							var invteacher = document.querySelector<HTMLElement>(".invalid-teacher");
 							if(invteacher != null)
 								invteacher.style.display = "block";
