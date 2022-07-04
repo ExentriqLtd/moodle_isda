@@ -524,7 +524,35 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 
             await Promise.all(p2).finally(() => {
                 refresher?.complete();
+                
+                console.log("promise end");
+                
+                setTimeout(function(){
+	                
+	                	var codeSection = document.querySelector<HTMLElement>("#SectionChechCourseCode");
+			            if(codeSection != null)
+			            	codeSection.style.display = "block";
+	        
+			       		var mobileareas = document.querySelector<HTMLElement>(".mobile-only-area");
+				   		if(mobileareas != null){
+				   		 	mobileareas.style.display = "block";
+			            }
+			            
+			            var pleaseUpgrade = document.querySelector<HTMLElement>("#pleaseUpgrade");
+						if(pleaseUpgrade != null){
+			            	pleaseUpgrade.style.display = "none";
+			            }
+			            
+			            var showAfterUpgrade = document.querySelector<HTMLElement>("#showAfterUpgrade");
+						if(showAfterUpgrade != null){
+			            	showAfterUpgrade.style.display = "block";
+			            }
+			            
+			    
+						},2000)
+                
             });
+            
         });
     }
 
