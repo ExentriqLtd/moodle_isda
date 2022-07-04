@@ -20,6 +20,7 @@ import { CoreBlockComponentsModule } from '@/core/features/block/components/comp
 import { CoreCourseComponentsModule } from '@features/course/components/components.module';
 
 import { CoreSiteHomeIndexPage } from '.';
+import { CoreLoginSiteBadgesComponent } from './site-badges/site-badges';
 
 const routes: Routes = [
     {
@@ -37,6 +38,7 @@ const routes: Routes = [
     ],
     declarations: [
         CoreSiteHomeIndexPage,
+        CoreLoginSiteBadgesComponent,
     ],
     exports: [RouterModule],
 })

@@ -29,7 +29,7 @@ import { CoreCourseModuleDelegate, CoreCourseModuleHandlerData } from '@features
 import { CoreCourseModulePrefetchDelegate } from '@features/course/services/module-prefetch-delegate';
 import { CoreNavigator } from '@services/navigator';
 import { CoreUtils } from '@services/utils/utils';
-import { CoreLoginSiteBadgesComponent } from '@features/login/components/site-badges/site-badges';
+import { CoreLoginSiteBadgesComponent } from './site-badges/site-badges';
 import { Translate } from '@singletons';
 /**
  * Page that displays site home index.
@@ -114,9 +114,9 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 	        async function showBadges(){
 		        
 		        let contentModal = await CoreDomUtils.openModal({
-            component: CoreLoginSiteBadgesComponent,
-            cssClass: 'core-modal-fullscreen',
-        });
+            		component: CoreLoginSiteBadgesComponent,
+            		cssClass: 'core-modal-fullscreen',
+        	});
 		        
 		        console.log("contentModal", contentModal);
 		     	

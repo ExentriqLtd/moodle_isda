@@ -26,6 +26,7 @@ import { CoreLoginHelperProvider } from '@features/login/services/login-helper';
     templateUrl: 'site-badges.html',
     styleUrls: ['site-badges.scss'],
 })
+
 export class CoreLoginSiteBadgesComponent {
 
     urlImageHtml: string;
