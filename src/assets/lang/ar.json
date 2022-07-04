@@ -2255,7 +2255,8 @@
     "core.yes": "نعم",
     "core.youreoffline": "أنت غير متصل",
     "core.youreonline": "عُدتَ متصلاً",
-    "home.nobadges": "In this page your ISDA certification are listed. If you think some of them are missing, please contact your instructor or write to info@isdaworld.com",
-    "home.codenotvalid": "Course code not valid",
-    "home.teachernotvalid": "Instructor code not valid"
+    "home.nobadges": "في هذه الصفحة يتم سرد شهادات ISDA الخاصة بك. <br/> إذا كنت تعتقد أن بعضها مفقود ، فيرجى الاتصال بمدرسك أو الكتابة",
+    "home.codenotvalid": "رمز الدورة غير صالح",
+    "home.teachernotvalid": "رمز المدرب غير صالح",
+    "core.badges": "الشهادات"
 }
