@@ -773,6 +773,7 @@
     "core.years": "ปี",
     "core.yes": "ใช่",
     "home.nobadges": "ในหน้านี้ ใบรับรอง ISDA ของคุณอยู่ในรายการ<br/>หากคุณคิดว่าใบรับรองบางส่วนขาดหายไป โปรดติดต่อผู้สอนของคุณหรือเขียนถึง info@isdaitalia.it",
-    "home.codenotvalid": "Course code not valid",
-    "home.teachernotvalid": "Instructor code not valid"
+    "home.codenotvalid": "รหัสหลักสูตรไม่ถูกต้อง",
+    "home.teachernotvalid": "รหัสผู้สอนไม่ถูกต้อง",
+    "core.badges": "ใบรับรอง"
 }

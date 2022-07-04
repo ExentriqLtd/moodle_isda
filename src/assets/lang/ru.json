@@ -2067,6 +2067,7 @@
     "core.years": "г.",
     "core.yes": "Да",
     "home.nobadges": "На этой странице перечислены ваши сертификаты ISDA.<br/>Если вы считаете, что некоторые из них отсутствуют, свяжитесь со своим инструктором или напишите по адресу info@isdaitalia.it",
-    "home.codenotvalid": "Course code not valid",
-    "home.teachernotvalid": "Instructor code not valid"
+    "home.codenotvalid": "Код курса недействителен",
+    "home.teachernotvalid": "Код инструктора недействителен",
+    "core.badges": "Сертификаты"
 }

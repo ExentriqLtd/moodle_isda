@@ -2257,6 +2257,7 @@
     "core.youreoffline": "Está offline",
     "core.youreonline": "Está online novamente",
     "home.nobadges": "Nesta página, suas certificações ISDA estão listadas.<br/>Se você acha que algumas delas estão faltando, entre em contato com seu instrutor ou escreva para info@isdaitalia.it",
-    "home.codenotvalid": "Course code not valid",
-    "home.teachernotvalid": "Instructor code not valid"
+    "home.codenotvalid": "Código do curso inválido",
+    "home.teachernotvalid": "Código do instrutor inválido",
+    "core.badges": "Certificações"
 }
