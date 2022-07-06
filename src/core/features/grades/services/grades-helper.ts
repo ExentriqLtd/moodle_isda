@@ -54,7 +54,7 @@ export class CoreGradesHelperProvider {
      * @param tableRow JSON object representing row of grades table data.
      * @return Formatted row object.
      */
-    protected formatGradeRow(tableRow: CoreGradesTableRow): CoreGradesFormattedRow {
+    protected formatGradeRow(tableRow: CoreGradesTableRow, courseId: number): CoreGradesFormattedRow {
         const row: CoreGradesFormattedRow = {
             rowclass: '',
         };
@@ -69,7 +69,8 @@ export class CoreGradesHelperProvider {
 
             if (name == 'itemname') {
                 this.setRowIcon(row, content);
-                row.link = this.getModuleLink(content); //"/main/home/mod_quiz/73/1554/review/328?userId=6";
+                //row.link = this.getModuleLink(content); //"/main/home/mod_quiz/73/1554/review/328?userId=6";
+                row.link = "/main/home/mod_quiz/" + courseId + "/1554/review/326";
                 row.rowclass += column.class.indexOf('hidden') >= 0 ? ' hidden' : '';
                 row.rowclass += column.class.indexOf('dimmed_text') >= 0 ? ' dimmed_text' : '';
 
@@ -297,7 +298,7 @@ export class CoreGradesHelperProvider {
             throw new CoreError('Couldn\'t get grade item');
         }
 
-        return this.getGradesTableRow(grades, gradeId);
+        return this.getGradesTableRow(grades, gradeId, courseId);
     }
 
     /**
@@ -346,7 +347,7 @@ export class CoreGradesHelperProvider {
 
         if ('tabledata' in grades) {
             // 3.1 Table format.
-            return this.getModuleGradesTableRows(grades, moduleId);
+            return this.getModuleGradesTableRows(grades, moduleId, courseId);
         }
 
         return grades.filter((item) => item.cmid == moduleId).map((item) => this.formatGradeItem(item));
@@ -378,7 +379,7 @@ export class CoreGradesHelperProvider {
      * @return URL linking to the module.
      */
     protected getModuleLink(text: string): string | false {
-        const el = CoreDomUtils.toDom(text)[0];
+	    const el = CoreDomUtils.toDom(text)[0];
         const link = el.attributes['href'] ? el.attributes['href'].value : false;
 
         if (!link || link.indexOf('/mod/') < 0) {
@@ -395,7 +396,7 @@ export class CoreGradesHelperProvider {
      * @param gradeId Grade Object identifier.
      * @return Formatted HTML table.
      */
-    getGradesTableRow(table: CoreGradesTable, gradeId: number): CoreGradesFormattedRow | null {
+    getGradesTableRow(table: CoreGradesTable, gradeId: number, courseId: number): CoreGradesFormattedRow | null {
         if (table.tabledata) {
             const selectedRow = table.tabledata.find(
                 (row) =>
@@ -406,7 +407,7 @@ export class CoreGradesHelperProvider {
             );
 
             if (selectedRow) {
-                return this.formatGradeRow(selectedRow);
+                return this.formatGradeRow(selectedRow, courseId);
             }
         }
 
@@ -420,7 +421,7 @@ export class CoreGradesHelperProvider {
      * @param moduleId Grade Object identifier.
      * @return Formatted HTML table.
      */
-    getModuleGradesTableRows(table: CoreGradesTable, moduleId: number): CoreGradesFormattedRow[] {
+    getModuleGradesTableRows(table: CoreGradesTable, moduleId: number, courseId: number): CoreGradesFormattedRow[] {
         if (!table.tabledata) {
             return [];
         }
@@ -440,7 +441,7 @@ export class CoreGradesHelperProvider {
             }
 
             return false;
-        }).map((row) => this.formatGradeRow(row));
+        }).map((row) => this.formatGradeRow(row, courseId));
     }
 
     /**
