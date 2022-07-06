@@ -69,7 +69,7 @@ export class CoreGradesHelperProvider {
 
             if (name == 'itemname') {
                 this.setRowIcon(row, content);
-                row.link = this.getModuleLink(content);
+                row.link = this.getModuleLink(content); //"/main/home/mod_quiz/73/1554/review/328?userId=6";
                 row.rowclass += column.class.indexOf('hidden') >= 0 ? ' hidden' : '';
                 row.rowclass += column.class.indexOf('dimmed_text') >= 0 ? ' dimmed_text' : '';
 
