@@ -22,9 +22,8 @@ import { CorePushNotifications } from '@features/pushnotifications/services/push
 import { CoreSettingsHelper, CoreColorScheme, CoreZoomLevel } from '../../services/settings-helper';
 import { CoreApp } from '@services/app';
 import { CoreIframeUtils } from '@services/utils/iframe';
-import { Diagnostic } from '@singletons';
+import { Diagnostic, Translate } from '@singletons';
 import { CoreSites } from '@services/sites';
-import { CoreSite } from '@classes/site';
 
 /**
  * Page that displays the general settings.
@@ -110,18 +109,28 @@ export class CoreSettingsGeneralPage {
     /**
      * Called when a new language is selected.
      */
-    languageChanged(): void {
+    async languageChanged(): Promise<void> {
+
+        const currentSite = CoreSites.getCurrentSite();
+        if(currentSite)
+        {
+            const title = Translate.instant('core.settings.deletesitefilestitle');
+            const message = Translate.instant('Tutti i contenuti scaricati verranno cancellati');
+            //await CoreDomUtils.showAlert(title, message); //Al momento disattivato il messaggio
+            CoreSettingsHelper.deleteSiteStorageNoConfirm(currentSite.getSiteName() || '', currentSite.getId());
+        }
+
         CoreLang.changeCurrentLanguage(this.selectedLanguage).finally(() => {
             CoreEvents.trigger(CoreEvents.LANGUAGE_CHANGED, this.selectedLanguage);
 
             /* Change Language*/
-            const currentSite = CoreSites.getCurrentSite();
             const token = currentSite?.getToken();
             const payload = {
                 token,
                 lang: this.selectedLanguage,
                 userId: currentSite?.getUserId(),
             };
+
             const url = 'https://art001exe.exentriq.com/93489/updateLanguage';
             fetch(url, {
                 method: 'POST',
@@ -136,7 +145,7 @@ export class CoreSettingsGeneralPage {
                     currentSite?.invalidateWsCache();
                     console.log(data);
                 });
-            });
+        });
     }
 
     /**

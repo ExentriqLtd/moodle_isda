@@ -1,6 +1,6 @@
 {
     "app_id": "isda.exentriq.com",
-    "appname": "ISDA School",
+    "appname": "ISDA E-Learning",
     "versioncode": 1,
     "versionname": "2.0.0",
     "cache_update_frequency_usually": 420000,
@@ -16,7 +16,8 @@
         "it": "Italiano",
         "pt": "Português - Portugal",
         "ru": "Русский",
-        "th": "Thai"
+        "th": "Thai",
+        "de": "Deutschland"
     },
     "wsservice": "moodle_mobile_app",
     "wsextservice": "local_mobile",
