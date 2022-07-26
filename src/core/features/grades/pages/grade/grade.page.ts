@@ -74,4 +74,9 @@ export class CoreGradesGradePage implements OnInit {
         refresher.complete();
     }
 
+    viewGrade(link: string): void {
+        console.log('viewGrade ' + link);
+        CoreNavigator.navigateToSitePath(link);
+    }
+
 }

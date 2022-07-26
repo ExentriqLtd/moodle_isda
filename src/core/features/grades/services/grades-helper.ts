@@ -67,10 +67,15 @@ export class CoreGradesHelperProvider {
 
             let content = String(column.content);
 
+            // const attempts = AddonModQuiz.getUserAttempts(quiz.id, { cmId: this.module.id });
+
             if (name == 'itemname') {
                 this.setRowIcon(row, content);
-                //row.link = this.getModuleLink(content); //"/main/home/mod_quiz/73/1554/review/328?userId=6";
-                row.link = "/main/home/mod_quiz/" + courseId + "/1554/review/326";
+                /* const params = this.extractUrlParams(content);
+                console.log('0...content',content);
+                console.log('0...params ',params);
+                row.link = '/main/home/mod_quiz/' + courseId + '/' + params.id + '/review/' + params.itemnumber;*/
+                row.link = this.getModuleLink(content);
                 row.rowclass += column.class.indexOf('hidden') >= 0 ? ' hidden' : '';
                 row.rowclass += column.class.indexOf('dimmed_text') >= 0 ? ' dimmed_text' : '';
 
@@ -378,7 +383,24 @@ export class CoreGradesHelperProvider {
      * @param text HTML where the link is present.
      * @return URL linking to the module.
      */
-    protected getModuleLink(text: string): string | false {
+    protected extractUrlParams(text: string): any | false {
+	    const el = CoreDomUtils.toDom(text)[0];
+        const link = el.attributes['href'] ? el.attributes['href'].value : false;
+
+        if (!link || link.indexOf('/mod/') < 0) {
+            return false;
+        }
+
+        return CoreUrlUtils.extractUrlParams(link);
+    }
+
+    /**
+     * Gets the link to the module for the selected grade.
+     *
+     * @param text HTML where the link is present.
+     * @return URL linking to the module.
+     */
+    protected getModuleLink(text: string): any | false {
 	    const el = CoreDomUtils.toDom(text)[0];
         const link = el.attributes['href'] ? el.attributes['href'].value : false;
 
