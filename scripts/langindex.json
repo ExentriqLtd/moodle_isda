@@ -2059,6 +2059,7 @@
   "core.serverconnection": "error",
   "core.settings.about": "local_moodlemobileapp",
   "core.settings.appsettings": "local_moodlemobileapp",
+  "core.settings.languagesettings": "local_moodlemobileapp",
   "core.settings.appversion": "local_moodlemobileapp",
   "core.settings.cannotsyncloggedout": "local_moodlemobileapp",
   "core.settings.cannotsyncoffline": "local_moodlemobileapp",
@@ -2261,5 +2262,8 @@
   "core.years": "moodle",
   "core.yes": "moodle",
   "core.youreoffline": "local_moodlemobileapp",
-  "core.youreonline": "local_moodlemobileapp"
+  "core.youreonline": "local_moodlemobileapp",
+  "core.settings.languagesettings": "local_moodlemobileapp",
+  "core.usercancellation": "local_moodlemobileapp",
+  "core.usercancellationpolicy": "local_moodlemobileapp",
 }

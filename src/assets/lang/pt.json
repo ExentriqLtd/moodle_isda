@@ -2259,5 +2259,8 @@
     "home.nobadges": "Nesta página, suas certificações ISDA estão listadas.<br/>Se você acha que algumas delas estão faltando, entre em contato com seu instrutor ou escreva para info@isdaitalia.it",
     "home.codenotvalid": "Código do curso inválido",
     "home.teachernotvalid": "Código do instrutor inválido",
-    "core.badges": "Certificações"
+    "core.badges": "Certificações",
+    "core.settings.languagesettings": "Mudar idioma",
+    "core.usercancellation": "Cancelamento do usuário",
+    "core.usercancellationpolicy": "Você pode encerrar sua conta enviando um e-mail para info@isdaitalia.it"
 }

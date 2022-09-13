@@ -775,5 +775,8 @@
     "home.nobadges": "ในหน้านี้ ใบรับรอง ISDA ของคุณอยู่ในรายการ<br/>หากคุณคิดว่าใบรับรองบางส่วนขาดหายไป โปรดติดต่อผู้สอนของคุณหรือเขียนถึง info@isdaitalia.it",
     "home.codenotvalid": "รหัสหลักสูตรไม่ถูกต้อง",
     "home.teachernotvalid": "รหัสผู้สอนไม่ถูกต้อง",
-    "core.badges": "ใบรับรอง"
+    "core.badges": "ใบรับรอง",
+    "core.settings.languagesettings": "เปลี่ยนภาษา",
+    "core.usercancellation": "การยกเลิกผู้ใช้",
+    "core.usercancellationpolicy": "คุณสามารถปิดบัญชีของคุณได้โดยส่งอีเมลไปที่ info@isdaitalia.it"
 }

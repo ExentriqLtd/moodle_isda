@@ -2070,5 +2070,8 @@
     "home.nobadges": "In questa pagina sono elencate le tue certificazioni ISDA.<br/>Se ritieni che alcune di esse manchino, contatta il tuo Istruttore o scrivi a info@isdaitalia.it",
     "home.codenotvalid": "Codice non valido",
     "home.teachernotvalid": "Codice istruttore non valido",
-    "core.badges": "Brevetti"
+    "core.badges": "Brevetti",
+    "core.settings.languagesettings": "Scegli Lingua",
+    "core.usercancellation": "Cancellazione Account",
+    "core.usercancellationpolicy": "Puoi richiedere la cancellazione dell'account inviando una email a info@isdaitalia.it"
 }
