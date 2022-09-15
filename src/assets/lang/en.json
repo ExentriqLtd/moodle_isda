@@ -2262,6 +2262,10 @@
     "core.yes": "Yes",
     "core.youreoffline": "You are offline",
     "core.youreonline": "You are back online",
+    "home.nobadges": "In this page your ISDA certification are listed. If you think some of them are missing, please contact your instructor or write to info@isdaworld.com",
+	"home.codenotvalid": "Course code not valid",
+	"home.teachernotvalid": "Instructor code not valid",
+    "core.badges": "Certifications",
     "core.settings.languagesettings": "Change Language",
     "core.usercancellation": "User Cancellation",
     "core.usercancellationpolicy": "You can close your account by sending an e-mail to info@isdaitalia.it"
