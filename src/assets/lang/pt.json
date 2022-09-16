@@ -2262,5 +2262,7 @@
     "core.badges": "Certificações",
     "core.settings.languagesettings": "Mudar idioma",
     "core.usercancellation": "Cancelamento do usuário",
-    "core.usercancellationpolicy": "Você pode encerrar sua conta enviando um e-mail para info@isdaitalia.it"
+    "core.usercancellationpolicy": "Você pode encerrar sua conta enviando um e-mail para info@isdaitalia.it",
+    "core.deleteuser": "Cancelar conta",
+    "core.deleteuserconfirmation": "Tem certeza de que deseja cancelar sua conta? Esta operação é irreversível"
 }

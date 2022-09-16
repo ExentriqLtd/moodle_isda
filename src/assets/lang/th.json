@@ -778,5 +778,7 @@
     "core.badges": "ใบรับรอง",
     "core.settings.languagesettings": "เปลี่ยนภาษา",
     "core.usercancellation": "การยกเลิกผู้ใช้",
-    "core.usercancellationpolicy": "คุณสามารถปิดบัญชีของคุณได้โดยส่งอีเมลไปที่ info@isdaitalia.it"
+    "core.usercancellationpolicy": "คุณสามารถปิดบัญชีของคุณได้โดยส่งอีเมลไปที่ info@isdaitalia.it",
+    "core.deleteuser": "ยกเลิกบัญชี",
+    "core.deleteuserconfirmation": "คุณแน่ใจหรือไม่ว่าต้องการยกเลิกบัญชีของคุณ การดำเนินการนี้ไม่สามารถย้อนกลับได้"
 }

@@ -2261,5 +2261,7 @@
     "core.badges": "الشهادات",
     "core.settings.languagesettings": "تغيير اللغة",
     "core.usercancellation": "إلغاء المستخدم",
-    "core.usercancellationpolicy": "يمكنك إغلاق حسابك بإرسال بريد إلكتروني إلى info@isdaitalia.it"
+    "core.usercancellationpolicy": "يمكنك إغلاق حسابك بإرسال بريد إلكتروني إلى info@isdaitalia.it",
+    "core.deleteuser": "إلغاء حساب",
+    "core.deleteuserconfirmation": "هل أنت متأكد أنك تريد إلغاء حسابك؟ هذه العملية لا رجوع فيها"
 }

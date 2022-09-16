@@ -2073,5 +2073,7 @@
     "core.badges": "Brevetti",
     "core.settings.languagesettings": "Scegli Lingua",
     "core.usercancellation": "Cancellazione Account",
-    "core.usercancellationpolicy": "Puoi richiedere la cancellazione dell'account inviando una email a info@isdaitalia.it"
+    "core.usercancellationpolicy": "Puoi richiedere la cancellazione dell'account inviando una email a info@isdaitalia.it",
+    "core.deleteuser": "Rimozione Account",
+    "core.deleteuserconfirmation": "Sei sicuro di voler rimuovere l'account? Questa operazione è irreversibile"
 }

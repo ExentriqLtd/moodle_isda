@@ -2262,5 +2262,7 @@
     "core.badges": "Zertifizierungen",
     "core.settings.languagesettings": "Sprache ändern",
     "core.usercancellation": "Benutzerkündigung",
-    "core.usercancellationpolicy": "Sie können Ihr Konto schließen, indem Sie eine E-Mail an info@isdaitalia.it senden"
+    "core.usercancellationpolicy": "Sie können Ihr Konto schließen, indem Sie eine E-Mail an info@isdaitalia.it senden",
+    "core.deleteuser": "Account löschen",
+    "core.deleteuserconfirmation": "Möchten Sie Ihr Konto wirklich kündigen? Dieser Vorgang ist irreversibel"
 }
