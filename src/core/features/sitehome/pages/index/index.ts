@@ -15,6 +15,7 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { IonRefresher } from '@ionic/angular';
 import { Params } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { CoreSite, CoreSiteConfig } from '@classes/site';
 import { CoreCourse, CoreCourseModuleBasicInfo, CoreCourseWSSection } from '@features/course/services/course';
@@ -32,6 +33,7 @@ import { CoreUtils } from '@services/utils/utils';
 import { CoreLoginSiteBadgesComponent } from './site-badges/site-badges';
 import { Translate } from '@singletons';
 import { CoreLang } from '@services/lang';
+import { CoreForms } from '@singletons/form';
 
 /**
  * Page that displays site home index.
@@ -48,7 +50,9 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
     section?: CoreCourseWSSection & {
         hasContent?: boolean;
     };
-
+	
+	couponForm!: FormGroup;
+	instructorForm!: FormGroup;
     hasContent = false;
     items: string[] = [];
     siteHomeId = 1;
@@ -62,6 +66,10 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 
     protected updateSiteObserver?: CoreEventObserver;
 	
+	constructor(
+        protected fb: FormBuilder,
+    ) {}
+    
     /**
      * Page being initialized.
      */
@@ -81,6 +89,15 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 
             this.switchDownload(this.downloadEnabled && this.downloadCourseEnabled && this.downloadCoursesEnabled);
         }, CoreSites.getCurrentSiteId());
+        
+        this.couponForm = this.fb.group({
+            coursecode: ['', Validators.required]
+        });
+
+		this.instructorForm = this.fb.group({
+            courseinstructor: ['', Validators.required]
+        });
+
 
         this.currentSite = CoreSites.getCurrentSite()!;
         this.siteHomeId = CoreSites.getCurrentSiteHomeId();
@@ -118,335 +135,32 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
         this.loadContent().finally(() => {
             this.dataLoaded = true;
             
+            
+            
             setTimeout(function(){
-	        
-	        var mobileareas = document.querySelector<HTMLElement>(".mobile-only-area");
-            if(mobileareas != null){
-	            mobileareas.style.display = "block";
-	            }
 	            
-	            var pleaseUpgrade = document.querySelector<HTMLElement>("#pleaseUpgrade");
-				if(pleaseUpgrade != null){
-	            	pleaseUpgrade.style.display = "none";
-	            }
-	            
-	            var showAfterUpgrade = document.querySelector<HTMLElement>("#showAfterUpgrade");
-				if(showAfterUpgrade != null){
-	            	showAfterUpgrade.style.display = "block";
-	            }
+	            //added oct 2022, hide web part
+	            var step1 = document.querySelector<HTMLElement>("#step1");
+				if(step1 != null)
+					step1.style.display = "none";
+				
 	        
-	        
-	        async function showBadges(){
+		        var mobileareas = document.querySelector<HTMLElement>(".mobile-only-area");
+	            if(mobileareas != null){
+		            mobileareas.style.display = "block";
+		            }
+		            
+		        var pleaseUpgrade = document.querySelector<HTMLElement>("#pleaseUpgrade");
+				  	if(pleaseUpgrade != null){
+		            	pleaseUpgrade.style.display = "none";
+		            }
+		            
+		        var showAfterUpgrade = document.querySelector<HTMLElement>("#showAfterUpgrade");
+					if(showAfterUpgrade != null){
+		            	showAfterUpgrade.style.display = "none";
+		            }
 		        
-		        let contentModal = await CoreDomUtils.openModal({
-            		component: CoreLoginSiteBadgesComponent,
-            		cssClass: 'core-modal-fullscreen',
-        	});
-		        
-		        console.log("contentModal", contentModal);
-		     	
-		     	//let modal = await CoreDomUtils.showModalLoading("Loading");
-					
-					 
-		        
-		    }
 	        
-	        var viewbadges = document.querySelector<HTMLElement>(".view-badges");
-            if(viewbadges != null){
-				viewbadges.addEventListener("click", (e) => {
-					
-					showBadges();
-					
-				})
-					
-			}
-	        
-	        var resetcode = document.querySelector<HTMLElement>(".change-code");
-            if(resetcode != null){
-				resetcode.addEventListener("click", (e) => {
-					
-					window["courseId"] = null;
-					window["couponId"] = null;
-							
-					var step1 = document.querySelector<HTMLElement>("#step1");
-					if(step1 != null)
-						step1.style.display = "block";
-					
-					var step2 = document.querySelector<HTMLElement>("#step2");
-					if(step2 != null)
-						step2.style.display = "none";
-						
-					var codeInput = document.querySelector<HTMLInputElement>("#course_code");
-					if(codeInput != null)
-						codeInput.value = "";
-						
-					var teachercode = document.querySelector<HTMLInputElement>(".teacher_code");
-					if(teachercode != null)
-					 	teachercode.value = "";
-					 	
-					var invcourse = document.querySelector<HTMLElement>(".invalid-course");
-					if(invcourse != null)
-						invcourse.style.display = "none";
-						
-					var invteacher = document.querySelector<HTMLElement>(".invalid-teacher");
-					if(invteacher != null)
-						invteacher.style.display = "none";
-						
-					var courseTeacher = document.querySelector<HTMLInputElement>("#course-teacher");
-					if(courseTeacher != null)
-						courseTeacher.style.display = "none";
-						
-					var teacherCodeBtn = document.querySelector<HTMLInputElement>("#teacher_code_btn");
-					if(teacherCodeBtn != null)
-						teacherCodeBtn.style.display = "block";
-						
-					var teacherCodeField = document.querySelector<HTMLInputElement>("#teacher_code_field");
-					if(teacherCodeField != null)
-						teacherCodeField.style.display = "block";
-						
-					var isdaTitle = document.querySelector<HTMLElement>("#isdaTitle");
-					if(isdaTitle != null)
-						isdaTitle.style.display = "block";
-				})
-			}
-	        
-            var codeSection = document.querySelector<HTMLElement>("#SectionChechCourseCode");
-            if(codeSection != null)
-            	codeSection.style.display = "block";
-        
-			var send_code = document.querySelector<HTMLElement>(".send_code");
-            if(send_code != null)
-            	send_code.addEventListener("click", (e) => {
-	            	
-	            	
-				var code = "";
-				
-				var codeInput = document.querySelector<HTMLInputElement>("#course_code");
-				if(codeInput != null)
-					code = codeInput.value;
-				
-				var url = "https://art001exe.exentriq.com/93489/isValidCode?code=" + code.replace("-","") + "&rand=" + new Date().getTime();
-				
-				fetch(url)
-					  .then(response => response.json())
-					  .then(data => {
-					    // Handle data
-					    
-					    console.log(data);
-					    
-					    if(!data.valid){
-							CoreDomUtils.showErrorModal(codenotvalid);//'Course code not valid');
-							var invcourse = document.querySelector<HTMLElement>(".invalid-course");
-							if(invcourse != null)
-								invcourse.style.display = "block";
-							return;
-						}else{
-							
-							var step1 = document.querySelector<HTMLElement>("#step1");
-							if(step1 != null)
-								step1.style.display = "none";
-							
-							var step2 = document.querySelector<HTMLElement>("#step2");
-							if(step2 != null)
-								step2.style.display = "block";
-							
-							window["courseId"] = data.id;
-							window["couponId"] = data.coupon;
-							
-							var courseLabel = document.querySelector<HTMLElement>("#course-label-name");
-							if(courseLabel != null)
-								courseLabel.innerHTML = data.title;
-						}
-					    
-					  }).catch(error => {
-					    // Handle error
-					  });
-					
-					
-					
-					//location.href = "/user/begin.php?course=" + data.id + "&cid=" + data.coupon;
-					
-				//})
-				e.preventDefault();
-				e.stopPropagation();
-				return false;
-			})
-			
-			
-			var verify_code_nr = document.querySelector<HTMLElement>(".verify_code_nr");
-            if(verify_code_nr != null)
-				verify_code_nr.addEventListener("click", (e) => {
-				
-				//console.log("show bad teacher alert 0");
-				var invteacher = document.querySelector<HTMLElement>(".invalid-teacher");
-				if(invteacher != null)
-					invteacher.style.display = "none";
-					
-				
-				var code = "";
-				var teachercode = document.querySelector<HTMLInputElement>(".teacher_code");
-				if(teachercode != null)
-				 	code = teachercode.value;
-				
-				var url = "https://art001exe.exentriq.com/93489/isValidTeacher?code=" + code + "&course=" + window["courseId"] + "&rand=" + new Date().getTime();
-				
-				fetch(url)
-					  .then(response => response.json())
-					  .then(data => {
-					    // Handle data
-					    
-					    //console.log(data);
-					    
-					    if(!data.valid){
-							//console.log("show bad teacher alert");
-							CoreDomUtils.showErrorModal(teachernotvalid);
-							var invteacher = document.querySelector<HTMLElement>(".invalid-teacher");
-							if(invteacher != null)
-								invteacher.style.display = "block";
-								
-							return;
-						}else{
-							window["dataTeacher"] = data;
-				
-							var teacherId = data.id;
-							var teacherName = encodeURIComponent(data.name);
-							var courseCode = "";
-				
-							var codeInput = document.querySelector<HTMLInputElement>("#course_code");
-							if(codeInput != null)
-								courseCode = codeInput.value.replace("-","");
-							
-							var studentId = "";
-							var verify_code_nr = document.querySelector<HTMLInputElement>(".verify_code_nr");
-							if(verify_code_nr != null && verify_code_nr.attributes["data-id"] != null)
-								studentId = verify_code_nr.attributes["data-id"].value
-								
-							var couponId = window["couponId"];
-							
-							var courseTeacherName = document.querySelector<HTMLInputElement>("#course-teacher-name");
-							if(courseTeacherName != null)
-								courseTeacherName.innerHTML = data.name;
-								
-							var courseTeacher = document.querySelector<HTMLInputElement>("#course-teacher");
-							if(courseTeacher != null)
-								courseTeacher.style.display = "block";
-								
-							var teacherCodeBtn = document.querySelector<HTMLInputElement>("#teacher_code_btn");
-							if(teacherCodeBtn != null)
-								teacherCodeBtn.style.display = "none";
-								
-							var teacherCodeField = document.querySelector<HTMLInputElement>("#teacher_code_field");
-							if(teacherCodeField != null)
-								teacherCodeField.style.display = "none";
-								
-							var isdaTitle = document.querySelector<HTMLElement>("#isdaTitle");
-							if(isdaTitle != null)
-								isdaTitle.style.display = "none";
-								
-							
-							
-							
-						}
-					    
-					  }).catch(error => {
-					    // Handle error
-					  });
-					
-					
-					
-					//location.href = "/user/begin.php?course=" + data.id + "&cid=" + data.coupon;
-					
-				//})
-				e.preventDefault();
-				e.stopPropagation();
-				return false;
-			})
-			
-			
-			var confirm_code_nr = document.querySelector<HTMLElement>(".confirm_code_nr");
-            if(confirm_code_nr != null)
-				confirm_code_nr.addEventListener("click", (e) => {
-				
-				
-				var teacherId = window["dataTeacher"].id;
-				var teacherName = encodeURIComponent(window["dataTeacher"].name);
-				var codeInput = document.querySelector<HTMLInputElement>("#course_code");
-				var courseCode = "";
-				if(codeInput != null)
-					courseCode = codeInput.value;
-				
-				var studentId = "";
-				var verify_code_nr = document.querySelector<HTMLElement>(".verify_code_nr");
-				if(verify_code_nr != null)
-            		studentId = verify_code_nr.attributes["data-id"].value
-				
-				var couponId = window["couponId"];
-				
-				var url2 = "https://art001exe.exentriq.com/93489/enrol?teacherId=" + teacherId + "&teacherName=" + teacherName + "&courseId=" + window["courseId"] + "&studentId=" + studentId + "&couponId=" + couponId + "&courseCode=" + courseCode + "&rand=" + new Date().getTime();
-							
-				fetch(url2)
-								.then(response => response.json())
-								.then(data2 => {
-									
-									if(data2.status == "success"){
-										
-										CoreCourseHelper.getCourse(data2.courseId).then(result => {
-                                            
-                                            CoreCourseHelper.openCourse(result.course);
-                                            CoreUtils.ignoreErrors(CoreCourses.invalidateUserCourses());
-                                            
-                                            window["courseId"] = null;
-											window["couponId"] = null;
-													
-											var step1 = document.querySelector<HTMLElement>("#step1");
-											if(step1 != null)
-												step1.style.display = "block";
-											
-											var step2 = document.querySelector<HTMLElement>("#step2");
-											if(step2 != null)
-												step2.style.display = "none";
-												
-											var codeInput = document.querySelector<HTMLInputElement>("#course_code");
-											if(codeInput != null)
-												codeInput.value = "";
-												
-											var teachercode = document.querySelector<HTMLInputElement>(".teacher_code");
-											if(teachercode != null)
-											 	teachercode.value = "";
-											 	
-											var invcourse = document.querySelector<HTMLElement>(".invalid-course");
-											if(invcourse != null)
-												invcourse.style.display = "none";
-												
-											var invteacher = document.querySelector<HTMLElement>(".invalid-teacher");
-											if(invteacher != null)
-												invteacher.style.display = "none";
-                                        });
-                                        
-                                        
-												
-									}else{
-										CoreDomUtils.showErrorModal('Sorry, we encountered a problem during enrolment, please try again');
-										var invteacher = document.querySelector<HTMLElement>(".invalid-teacher");
-										if(invteacher != null)
-											invteacher.style.display = "block";
-									}
-									
-									
-								}).catch(error => {
-							    // Handle error
-							  });
-					
-				
-				
-					
-				e.preventDefault();
-				e.stopPropagation();
-				return false;
-			})
-			
-			
-			
 			},2000)
         });
         
@@ -570,7 +284,7 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 			            
 			            var showAfterUpgrade = document.querySelector<HTMLElement>("#showAfterUpgrade");
 						if(showAfterUpgrade != null){
-			            	showAfterUpgrade.style.display = "block";
+			            	showAfterUpgrade.style.display = "none";
 			            }
 			            
 			    
@@ -640,6 +354,230 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
     ngOnDestroy(): void {
         this.updateSiteObserver?.off();
     }
+    
+     /**
+     * Validate coupon.
+     */
+    async validateCoupon(e?: Event): Promise<void> {
+	    
+	    var step1 = document.querySelector<HTMLElement>("#step1native");
+		if(step1 != null)
+			step1.style.display = "none";
+				 	
+	    const coursecode = this.couponForm.value.coursecode;
+	     
+	    const url = "https://art001exe.exentriq.com/93489/isValidCode?code=" + coursecode.replace("-","") + "&rand=" + new Date().getTime();
+				
+		fetch(url, {
+			method: 'GET',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json',
+			}
+		})
+			.then(response => response.json())
+			.then(data => {
+				console.log("Valid ",data);
+				
+				if(data.valid){
+					
+					window["courseId"] = data.id;
+					window["couponId"] = data.coupon;
+					
+					var step2 = document.querySelector<HTMLElement>("#step2native");
+					if(step2 != null)
+						step2.style.display = "block";
+					
+					var courseLabel = document.querySelector<HTMLElement>("#course-label-name-native");
+					if(courseLabel != null)
+						courseLabel.innerHTML = data.title;
+					
+				}else{
+					CoreDomUtils.showErrorModal(Translate.instant('core.course.not_valid'));	
+					if(step1 != null)
+						step1.style.display = "block";
+				}
+			
+			});
+	    
+       
+    }
+    
+    /**
+     * Validate instructor.
+     */
+    async validateInstructor(e?: Event): Promise<void> {
+	    
+	    var step2 = document.querySelector<HTMLElement>("#step2native");
+		if(step2 != null)
+			step2.style.display = "none";
+				 	
+	    const courseinstructor = this.instructorForm.value.courseinstructor;
+	     
+	    const url = "https://art001exe.exentriq.com/93489/isValidTeacher?code=" + courseinstructor + "&course=" + window["courseId"] + "&rand=" + new Date().getTime();
+	    				
+		fetch(url, {
+			method: 'GET',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json',
+			}
+		})
+			.then(response => response.json())
+			.then(data => {
+				console.log("Valid ",data);
+				
+				if(data.valid){
+					window["dataTeacher"] = data;	
+					var step3 = document.querySelector<HTMLElement>("#step3native");
+					if(step3 != null)
+						step3.style.display = "block";
+						
+					var courseTeacherName = document.querySelector<HTMLInputElement>("#course-teacher-name-native");
+					if(courseTeacherName != null)
+						courseTeacherName.innerHTML = data.name;
+						
+				}else{
+					CoreDomUtils.showErrorModal(Translate.instant('core.course.not_valid'));	
+					if(step2 != null)
+						step2.style.display = "block";
+				}
+			
+			});
+	    
+       
+    }
+    
+    /**
+     * Validate instructor.
+     */
+    async confirmCourse(e?: Event): Promise<void> {
+	    
+	    var step3 = document.querySelector<HTMLElement>("#step3native");
+		if(step3 != null)
+			step3.style.display = "none";
+				 	
+	    console.log("window['dataTeacher'] ", window["dataTeacher"]);
+	    
+	    var teacherId = window["dataTeacher"].id;
+		var teacherName = encodeURIComponent(window["dataTeacher"].name);
+				
+		var studentId = "";
+		var verify_code_nr = document.querySelector<HTMLElement>(".verify_code_nr");
+		if(verify_code_nr != null)
+        	studentId = verify_code_nr.attributes["data-id"].value
+		
+		console.log("studentId ", studentId);
+		
+		var couponId = window["couponId"];
+		
+		console.log("couponId ", couponId);
+		
+		const courseCode = this.couponForm.value.coursecode;
+				
+		console.log("courseCode ", courseCode);
+		
+	    const url = "https://art001exe.exentriq.com/93489/enrol?teacherId=" + teacherId + "&teacherName=" + teacherName + "&courseId=" + window["courseId"] + "&studentId=" + studentId + "&couponId=" + couponId + "&courseCode=" + courseCode + "&rand=" + new Date().getTime();	    				
+		fetch(url, {
+			method: 'GET',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json',
+			}
+		})
+			.then(response => response.json())
+			.then(data => {
+				console.log("Valid ",data);
+								
+				if(data.status == "success"){
+					
+					var step3 = document.querySelector<HTMLElement>("#step2native");
+					if(step3 != null)
+						step3.style.display = "block";
+									
+					CoreCourseHelper.getCourse(data.courseId).then(result => {
+                        
+                        CoreCourseHelper.openCourse(result.course);
+                        CoreUtils.ignoreErrors(CoreCourses.invalidateUserCourses());
+                        
+                        window["courseId"] = null;
+						window["couponId"] = null;
+						this.couponForm.value.coursecode = "";
+						this.couponForm.get('coursecode')?.setValue("");
+							
+						this.instructorForm.value.courseinstructor = ""; 
+						this.instructorForm.get('courseinstructor')?.setValue("");
+								
+						var step1 = document.querySelector<HTMLElement>("#step1native");
+						if(step1 != null)
+							step1.style.display = "block";
+						
+						var step2 = document.querySelector<HTMLElement>("#step2native");
+						if(step2 != null)
+							step2.style.display = "none";
+						
+                    });
+                    
+                    
+							
+				}else{
+					CoreDomUtils.showErrorModal(Translate.instant('core.course.course_server_error'));
+					
+				}
+			
+			});
+	    
+       
+    }
+    
+     async showBadgesNative(): Promise<void> {
+			        
+        let contentModal = await CoreDomUtils.openModal({
+    		component: CoreLoginSiteBadgesComponent,
+    		cssClass: 'core-modal-fullscreen',
+		});
+			        
+	 }
+    
+    /**
+     * Open settings.
+     */
+     changeCode(): void {
+        window["courseId"] = null;
+		window["couponId"] = null;
+				
+		var step1 = document.querySelector<HTMLElement>("#step1native");
+		if(step1 != null)
+			step1.style.display = "block";
+		
+		var step2 = document.querySelector<HTMLElement>("#step2native");
+		if(step2 != null)
+			step2.style.display = "none";
+			
+		var step3 = document.querySelector<HTMLElement>("#step3native");
+		if(step3 != null)
+			step3.style.display = "none";
+		
+		this.couponForm.value.coursecode = "";
+		this.couponForm.get('coursecode')?.setValue("");
+			
+		this.instructorForm.value.courseinstructor = ""; 
+		this.instructorForm.get('courseinstructor')?.setValue("");
+		 	
+		var invcourse = document.querySelector<HTMLElement>(".invalid-course");
+		if(invcourse != null)
+			invcourse.style.display = "none";
+			
+		var invteacher = document.querySelector<HTMLElement>(".invalid-teacher");
+		if(invteacher != null)
+			invteacher.style.display = "none";
+			
+		var courseTeacher = document.querySelector<HTMLInputElement>("#course-teacher");
+		if(courseTeacher != null)
+			courseTeacher.style.display = "none";
+		
+    }
+    
 
 }
 

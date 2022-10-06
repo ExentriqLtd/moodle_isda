@@ -2264,5 +2264,14 @@
     "core.usercancellation": "Benutzerkündigung",
     "core.usercancellationpolicy": "Sie können Ihr Konto schließen, indem Sie eine E-Mail an info@isdaitalia.it senden",
     "core.deleteuser": "Account löschen",
-    "core.deleteuserconfirmation": "Möchten Sie Ihr Konto wirklich kündigen? Dieser Vorgang ist irreversibel"
+    "core.deleteuserconfirmation": "Möchten Sie Ihr Konto wirklich kündigen? Dieser Vorgang ist irreversibel",
+    "core.course.insert_course_code": "Geben Sie Ihren Kurscode ein",
+    "core.course.valid_course_code": "GÜLTIGER CODE",
+    "core.course.insert_instructor_code": "Geben Sie nun Ihren <b>Lehrer</b>-Code ein",
+    "core.course.select": "Auswählen",
+    "core.course.instructor": "Lehrer",
+    "core.course.try_another_code": "Verwenden Sie einen anderen Code",
+    "core.course.not_valid": "Entschuldigung, falscher Code",
+    "core.course.course_server_error": "Entschuldigung, bei der Registrierung ist ein Problem aufgetreten. Bitte versuchen Sie es erneut",
+    "core.course.certifications": "Zertifizierungen"
 }

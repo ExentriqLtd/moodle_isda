@@ -138,6 +138,10 @@ export class CoreLoginSiteBadgesComponent {
      * Close help modal.
      */
     closeHelp(): void {
+	    var br2 = document.querySelector<HTMLElement>(".no-mybadges_result");
+        if(br2 != null){
+	         br2.style.display = "none";
+	    }
         ModalController.dismiss();
     }
 
