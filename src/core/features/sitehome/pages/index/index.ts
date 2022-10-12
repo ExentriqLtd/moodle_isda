@@ -368,6 +368,8 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 	     
 	    const url = "https://art001exe.exentriq.com/93489/isValidCode?code=" + coursecode.replace("-","") + "&rand=" + new Date().getTime();
 				
+		const modal = await CoreDomUtils.showModalLoading();
+		
 		fetch(url, {
 			method: 'GET',
 			headers: {
@@ -377,7 +379,8 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 		})
 			.then(response => response.json())
 			.then(data => {
-				console.log("Valid ",data);
+				
+				modal.dismiss();
 				
 				if(data.valid){
 					
@@ -415,7 +418,9 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 	    const courseinstructor = this.instructorForm.value.courseinstructor;
 	     
 	    const url = "https://art001exe.exentriq.com/93489/isValidTeacher?code=" + courseinstructor + "&course=" + window["courseId"] + "&rand=" + new Date().getTime();
-	    				
+	    
+	    const modal = await CoreDomUtils.showModalLoading();
+	    			
 		fetch(url, {
 			method: 'GET',
 			headers: {
@@ -425,7 +430,8 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 		})
 			.then(response => response.json())
 			.then(data => {
-				console.log("Valid ",data);
+				
+				modal.dismiss();
 				
 				if(data.valid){
 					window["dataTeacher"] = data;	
@@ -457,8 +463,6 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 		if(step3 != null)
 			step3.style.display = "none";
 				 	
-	    console.log("window['dataTeacher'] ", window["dataTeacher"]);
-	    
 	    var teacherId = window["dataTeacher"].id;
 		var teacherName = encodeURIComponent(window["dataTeacher"].name);
 				
@@ -467,17 +471,15 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 		if(verify_code_nr != null)
         	studentId = verify_code_nr.attributes["data-id"].value
 		
-		console.log("studentId ", studentId);
-		
 		var couponId = window["couponId"];
-		
-		console.log("couponId ", couponId);
 		
 		const courseCode = this.couponForm.value.coursecode;
 				
-		console.log("courseCode ", courseCode);
 		
 	    const url = "https://art001exe.exentriq.com/93489/enrol?teacherId=" + teacherId + "&teacherName=" + teacherName + "&courseId=" + window["courseId"] + "&studentId=" + studentId + "&couponId=" + couponId + "&courseCode=" + courseCode + "&rand=" + new Date().getTime();	    				
+	    
+	    const modal = await CoreDomUtils.showModalLoading();
+	    
 		fetch(url, {
 			method: 'GET',
 			headers: {
@@ -487,7 +489,8 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 		})
 			.then(response => response.json())
 			.then(data => {
-				console.log("Valid ",data);
+				
+				modal.dismiss();
 								
 				if(data.status == "success"){
 					
