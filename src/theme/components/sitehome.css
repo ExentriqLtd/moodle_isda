@@ -59,11 +59,10 @@ span.course_info_block {
   font-size: 20px;
 }
 .course-teacher-label-and-name{
-background-color: #fff;
+  background-color: #fff;
   display: block;
-  width: 480px;
   text-align: center;
-  height: 140px;
+  min-height: 140px;
   padding: 10px;
   margin: 0 auto 20px;
   border: 1px solid #ddd;
