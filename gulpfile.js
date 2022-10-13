@@ -55,7 +55,7 @@ gulp.task('push', (done) => {
 gulp.task(
     'default',
     gulp.parallel([
-        'lang',
+        //'lang',
         'env',
         ...(BuildBehatPluginTask.isBehatConfigured() ? ['behat'] : [])
     ]),

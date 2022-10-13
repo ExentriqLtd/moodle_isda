@@ -52,3 +52,19 @@ h4.isdaTitle {
 .mobilestepform .button{
 	color: #ffffff;
 }
+
+span.course_info_block {
+  display: block;
+  margin: 20px 0;
+  font-size: 20px;
+}
+.course-teacher-label-and-name{
+background-color: #fff;
+  display: block;
+  width: 480px;
+  text-align: center;
+  height: 140px;
+  padding: 10px;
+  margin: 0 auto 20px;
+  border: 1px solid #ddd;
+}

@@ -71,7 +71,7 @@ export class CoreSettingsSynchronizationPage implements OnInit, OnDestroy {
 
         this.sitesLoaded = true;
 
-        this.syncOnlyOnWifi = await CoreConfig.get(CoreConstants.SETTINGS_SYNC_ONLY_ON_WIFI, true);
+        this.syncOnlyOnWifi = await CoreConfig.get(CoreConstants.SETTINGS_SYNC_ONLY_ON_WIFI, false);
     }
 
     /**
