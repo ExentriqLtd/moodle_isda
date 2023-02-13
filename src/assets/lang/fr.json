@@ -1804,7 +1804,7 @@
     "core.login.createaccount": "Créer mon compte",
     "core.login.createuserandpass": "Créer un compte",
     "core.login.credentialsdescription": "Veuillez fournir votre nom d'utilisateur et votre mot de passe pour vous connecter.",
-    "core.login.emailconfirmsent": "<p>Un message vous a été envoyé à l'adresse de courriel <strong>{{$a}}</strong>.</p><p>Il contient les instructions pour terminer votre enregistrement.</p><p>Si vous rencontrez des difficultés, veuillez contacter l'administrateur du site.</p>",
+    "core.login.emailconfirmsent": "<p>Inscription terminée</p>\n <p>Vous pouvez vous connecter maintenant.</p>",
     "core.login.emailconfirmsentnoemail": "<p>Un courriel a été envoyé à votre adresse.</p><p>Il contient des instructions simples à effectuer pour terminer votre enregistrement.</p><p>Si vous rencontrez des difficultés, veuillez contacte l'administrateur du site.",
     "core.login.emailconfirmsentsuccess": "Courriel de confirmation envoyé",
     "core.login.emailnotmatch": "Les adresses de courriel ne correspondent pas",

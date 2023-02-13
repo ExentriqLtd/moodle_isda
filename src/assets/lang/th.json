@@ -582,7 +582,7 @@
     "core.login.changepassword": "เปลี่ยนรหัสผ่าน",
     "core.login.createaccount": "สร้างบัญชใหม่",
     "core.login.createuserandpass": "สร้างชื่อผู้ใช้และรหัสผ่านใหม่",
-    "core.login.emailconfirmsent": "<P>อีเมลส่งไปให้คุณที่ <B>{{$a}}</B>\n   <P>ประกอบไปด้วยวิธีการลงทะเบียนขั้นสุดท้าย <P>ถ้าหากคุณมีปัญหาในการลงทะเบียน กรุณาติดต่อผู้ดุแลระบบ",
+    "core.login.emailconfirmsent": "<P>การลงทะเบียนเสร็จสมบูรณ์</p>\n <p>คุณสามารถเข้าสู่ระบบได้เลย</p>",
     "core.login.emailconfirmsentsuccess": "อีเมล์ยืนยันตนถูกจัดส่งเรียบร้อยแล้ว",
     "core.login.firsttime": "ท่านเข้ามาที่นี่เป็นครั้งแรกหรือไม่",
     "core.login.forcepasswordchangenotice": "กรุณาเปลี่ยนรหัสผ่านก่อนไปยังขั้นต่อไป",

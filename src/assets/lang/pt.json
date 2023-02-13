@@ -1804,7 +1804,7 @@
     "core.login.createaccount": "Criar a minha conta",
     "core.login.createuserandpass": "Escolha um nome de utilizador e senha",
     "core.login.credentialsdescription": "Por favor, digite o nome de utilizador e senha para entrar",
-    "core.login.emailconfirmsent": "<p>Acaba de ser enviada uma mensagem para o seu endereço de e-mail <strong>{{$a}}</strong>, com instruções fáceis para completar a sua inscrição.</p><p>Se tiver alguma dificuldade em completar o registo, contacte o administrador do site.</p>",
+    "core.login.emailconfirmsent": "<p>Registro concluído</p>\n <p>Você pode fazer login agora.</p>",
     "core.login.emailconfirmsentnoemail": "<p>Foi enviado um e-mail para o seu endereço.</p><p> Contém instruções fáceis para concluir o seu registo.</p><p>Se continuar com dificuldades, entre em contacto com o administrador do site.</p>",
     "core.login.emailconfirmsentsuccess": "E-mail de confirmação enviado com sucesso",
     "core.login.emailnotmatch": "Os e-mails não coincidem",

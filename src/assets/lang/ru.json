@@ -1700,7 +1700,7 @@
     "core.login.createaccount": "Создать мой новый аккаунт",
     "core.login.createuserandpass": "Выберите имя пользователя и пароль",
     "core.login.credentialsdescription": "Пожалуйста, укажите Ваш логин и пароль для входа.",
-    "core.login.emailconfirmsent": "На указанный Вами адрес электронной почты (<b>{{$a}}</b>) было отправлено письмо с простыми инструкциями для завершения регистрации.\n Если у вас появятся проблемы с регистрацией, свяжитесь с администратором сайта.",
+    "core.login.emailconfirmsent": "Регистрация завершена\n>Теперь вы можете войти.",
     "core.login.emailconfirmsentsuccess": "Письмо подтверждения отправлено успешно",
     "core.login.emailnotmatch": "Адреса электронной почты не совпадают",
     "core.login.erroraccesscontrolalloworigin": "Запрос «Cross-Origin», который вы пытаетесь выполнить, отклонён. Пожалуйста, проверьте https://docs.moodle.org/dev/Moodle_Mobile_development_using_Chrome_or_Chromium",

@@ -1804,7 +1804,7 @@
     "core.login.createaccount": "Neues Nutzerkonto anlegen",
     "core.login.createuserandpass": "Anmeldedaten wählen",
     "core.login.credentialsdescription": "Geben Sie den Anmeldenamen und das Kennwort ein. ",
-    "core.login.emailconfirmsent": "<p>Um sicherzugehen, dass sich niemand unberechtigt über die von Ihnen angegebene E-Mail anmeldet, wird eine automatische Benachrichtigung an diese Adresse <b>{{$a}}</b> gesendet.</p>\n<p>Die Benachrichtigung enthält eine Anleitung, wie Sie Ihre Registrierung bestätigen. Danach sind Sie auf dieser Moodle-Seite registriert und können sofort loslegen.</p>\n<p>Bei Problemen wenden Sie sich bitte an die Administrator/innen der Website.</p>",
+    "core.login.emailconfirmsent": "<p>Registrierung abgeschlossen</p>\n <p>Sie können sich jetzt anmelden.</p>",
     "core.login.emailconfirmsentnoemail": "<p>An Ihre E-Mail-Adresse wurde eine Mitteilung gesendet.</p><p>Die Mitteilung enthält eine einfache Anleitung, um Ihre Registrierung abzuschließen. Falls Sie Probleme haben, wenden Sie sich an den Administrator der Website.</p>",
     "core.login.emailconfirmsentsuccess": "Die Bestätigungsmitteilung wurde erfolgreich versendet.",
     "core.login.emailnotmatch": "Die E-Mail-Adressen stimmen nicht überein.",
