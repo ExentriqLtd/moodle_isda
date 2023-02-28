@@ -2,7 +2,7 @@
     "app_id": "isda.exentriq.com",
     "appname": "ISDA E-Learning",
     "versioncode": 1,
-    "versionname": "2.0.0",
+    "versionname": "2.0.6",
     "cache_update_frequency_usually": 420000,
     "cache_update_frequency_often": 1200000,
     "cache_update_frequency_sometimes": 3600000,
