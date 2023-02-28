@@ -43,7 +43,8 @@
                 </ion-label>
             </ion-item>
 
-            <ng-container class="ion-text-wrap" *ngIf="course.contacts && course.contacts.length">
+            <!-- removed teacher list -  Adriano 28/02/2023 -->
+            <!--ng-container class="ion-text-wrap" *ngIf="course.contacts && course.contacts.length">
                 <ion-item-divider>
                     <ion-label>
                         <h2>{{ 'core.teachers' | translate }}</h2>
@@ -59,7 +60,7 @@
                     </ion-label>
                 </ion-item>
                 <core-spacer></core-spacer>
-            </ng-container>
+            </ng-container-->
 
             <ion-item class="ion-text-wrap" *ngIf="course.customfields">
                 <ion-label>

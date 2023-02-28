@@ -107,6 +107,12 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
             const modParams = CoreNavigator.getRouteParam<Params>('modParams');
             CoreCourseHelper.openModule(module, this.siteHomeId, undefined, modParams);
         }
+
+        console.log("0....CoreBlockDelegate_AddonBlockFeedback --> " + this.currentSite.isFeatureDisabled('CoreBlockDelegate_AddonBlockFeedback'));
+        if(this.currentSite.isFeatureDisabled('CoreBlockDelegate_AddonBlockFeedback')){
+            var step1Native = document.querySelector<HTMLElement>("#step1native");
+            if(step1Native) step1Native.style.display = "none";
+        }
         
 		//Init Lang
 		CoreLang.getCurrentLanguage().then((lang) => {
@@ -135,8 +141,6 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
         this.loadContent().finally(() => {
             this.dataLoaded = true;
             
-            
-            
             setTimeout(function(){
 	            
 	            //added oct 2022, hide web part
@@ -144,8 +148,7 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 				if(step1 != null)
 					step1.style.display = "none";
 				
-	        
-		        var mobileareas = document.querySelector<HTMLElement>(".mobile-only-area");
+                var mobileareas = document.querySelector<HTMLElement>(".mobile-only-area");
 	            if(mobileareas != null){
 		            mobileareas.style.display = "block";
 		            }
