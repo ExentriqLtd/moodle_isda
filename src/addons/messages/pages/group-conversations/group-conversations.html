@@ -73,7 +73,7 @@
                 </ion-item>
 
                 <!-- Group conversations. -->
-                <ion-item button class="divider ion-text-wrap" (click)="toggle(group)" sticky="true"
+                <!--ion-item button class="divider ion-text-wrap" (click)="toggle(group)" sticky="true"
                     [attr.aria-label]="(group.expanded ? 'core.collapse' : 'core.expand') | translate" [attr.aria-expanded]="group.expanded"
                     aria-controls="addon-messages-groupconversations-group" role="heading" detail="false">
                     <ion-icon name="fas-chevron-right" flip-rtl slot="start" aria-hidden="true" class="expandable-status-icon"
@@ -86,7 +86,7 @@
                     <span *ngIf="group.unread" class="sr-only">
                         {{ 'addon.messages.unreadconversations' | translate:{$a: group.unread} }}
                     </span>
-                </ion-item>
+                </ion-item-->
                 <div [hidden]="!group.conversations || !group.expanded || group.loading" #grouplist
                     id="addon-messages-groupconversations-group">
                     <ng-container *ngTemplateOutlet="conversationsTemplate; context: {conversations: group.conversations}">
