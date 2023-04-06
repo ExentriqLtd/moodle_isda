@@ -33,7 +33,7 @@ const args = Utils.getCommandLineArguments();
 
 // Build the language files into a single file per language.
 gulp.task('lang', (done) => {
-    new BuildLangTask().run(paths.lang, done);
+    //new BuildLangTask().run(paths.lang, done);
 });
 
 // Build an env file depending on the current environment.
