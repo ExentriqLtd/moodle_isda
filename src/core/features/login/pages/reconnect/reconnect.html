@@ -89,13 +89,6 @@
                 <!-- Login methods -->
                 <core-login-methods></core-login-methods>
 
-                <ng-container *ngIf="showScanQR && !isBrowserSSO">
-                    <ion-button expand="block" fill="outline" class="ion-margin core-login-site-qrcode"
-                        (click)="showInstructionsAndScanQR()">
-                        <ion-icon slot="start" name="fas-qrcode" aria-hidden="true"></ion-icon>
-                        {{ 'core.scanqr' | translate }}
-                    </ion-button>
-                </ng-container>
             </form>
 
 

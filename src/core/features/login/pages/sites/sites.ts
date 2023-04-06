@@ -45,7 +45,8 @@ export class CoreLoginSitesPage implements OnInit {
      * @inheritdoc
      */
     async ngOnInit(): Promise<void> {
-        if (CoreNavigator.getRouteBooleanParam('openAddSite')) {
+        this.add();
+        /* if (CoreNavigator.getRouteBooleanParam('openAddSite')) {
             this.add();
         }
 
@@ -54,7 +55,7 @@ export class CoreLoginSitesPage implements OnInit {
 
         if (this.accountsList.count == 0) {
             this.add();
-        }
+        }*/
     }
 
     /**
