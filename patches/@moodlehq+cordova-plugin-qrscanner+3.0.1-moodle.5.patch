@@ -1,0 +1,13 @@
+diff --git a/node_modules/@moodlehq/cordova-plugin-qrscanner/src/android/QRScanner.java b/node_modules/@moodlehq/cordova-plugin-qrscanner/src/android/QRScanner.java
+index f2e37d7..62d1c2d 100755
+--- a/node_modules/@moodlehq/cordova-plugin-qrscanner/src/android/QRScanner.java
++++ b/node_modules/@moodlehq/cordova-plugin-qrscanner/src/android/QRScanner.java
+@@ -24,7 +24,7 @@ import org.json.JSONException;
+ import org.json.JSONObject;
+ import android.hardware.Camera;
+ import android.provider.Settings;
+-import android.support.v4.app.ActivityCompat;
++import androidx.core.app.ActivityCompat;
+ import android.view.ViewGroup;
+ import android.widget.FrameLayout;
+ 
