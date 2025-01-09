@@ -25,4 +25,4 @@ open -na Google\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir
 
 
 ## Troubleshooting
-1. To build `Android` APP you need to move two files: `google-services.json` -> `platforms/android/app` and `resources/android/xml/network_security_config.xml` -> `platforms/android/app/src/res/xml`
+1. To build `Android` APP you need to move two files: `google-services.json` -> `platforms/android/app` and `resources/android/xml/network_security_config.xml` -> `platforms/android/app/src/main/res/xml`
