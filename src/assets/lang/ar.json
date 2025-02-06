@@ -2315,7 +2315,7 @@
     "core.usercancellationpolicy": "يمكنك إغلاق حسابك بإرسال بريد إلكتروني إلى info@isdaitalia.it",
     "core.deleteuser": "إلغاء حساب",
     "core.deleteuserconfirmation": "هل أنت متأكد أنك تريد إلغاء حسابك؟ هذه العملية لا رجوع فيها",
-    "core.course.insert_course_code": "دخل رمز الدورة التدريبية الخاصة بك",
+    "core.course.insert_course_code": "أدخل الكود لفتح دورة جديدة",
     "core.course.valid_course_code": "صالحة",
     "core.course.insert_instructor_code": "المعلم الخاص بك",
     "core.course.select": "لإختيار",

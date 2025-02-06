@@ -2141,7 +2141,7 @@
     "core.usercancellationpolicy": "Puoi richiedere la cancellazione dell'account inviando una email a info@isdaitalia.it",
     "core.deleteuser": "Rimozione Account",
     "core.deleteuserconfirmation": "Sei sicuro di voler rimuovere l'account? Questa operazione è irreversibile",
-    "core.course.insert_course_code": "Inserisci il codice corso",
+    "core.course.insert_course_code": "Inserisci il codice per aprire un nuovo corso",
     "core.course.valid_course_code": "CODICE VALIDO",
     "core.course.insert_instructor_code": "Ora inserisci il codice <b>istruttore</b>",
     "core.course.select": "Seleziona",

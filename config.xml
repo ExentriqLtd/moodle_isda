@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="21" id="isda.exentriq.com" ios-CFBundleVersion="3.0.4" version="3.0.4" versionCode="21" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="22" id="isda.exentriq.com" ios-CFBundleVersion="3.0.5" version="3.0.5" versionCode="22" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ISDA E-Learning</name>
     <description>ISDA E-Learning official app</description>
     <author email="info@exentriq.com" href="http://www.exentriq.com">Exentriq Ltd</author>
