@@ -2316,7 +2316,7 @@
     "core.usercancellationpolicy": "Vous pouvez fermer votre compte en envoyant un e-mail à info@isdaitalia.it",
     "core.deleteuser": "Annuler le compte",
     "core.deleteuserconfirmation": "Êtes-vous sûr de vouloir annuler votre compte ? Cette opération est irréversible",
-    "core.course.insert_course_code": "Insérez votre code de cours",
+    "core.course.insert_course_code": "Entrez le code pour ouvrir un nouveau cours",
     "core.course.valid_course_code": "CODE VALIDE",
     "core.course.insert_instructor_code": "Insérez maintenant votre code <b>instructeur</b>",
     "core.course.select": "Sélectionner",

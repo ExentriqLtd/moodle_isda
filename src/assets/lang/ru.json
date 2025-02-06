@@ -2133,7 +2133,7 @@
     "core.usercancellationpolicy": "Вы можете закрыть свою учетную запись, отправив электронное письмо на адрес info@isdaitalia.it",
     "core.deleteuser": "Отменить учетную запись",
     "core.deleteuserconfirmation": "Вы уверены, что хотите удалить свой аккаунт? Эта операция необратима",
-    "core.course.insert_course_code": "Введите код вашего курса",
+    "core.course.insert_course_code": "Введите код, чтобы открыть новый курс",
     "core.course.valid_course_code": "ДЕЙСТВИТЕЛЬНЫЙ КОД",
     "core.course.insert_instructor_code": "Теперь введите свой <b>код учителя</b>",
     "core.course.select": "Выбирать",
